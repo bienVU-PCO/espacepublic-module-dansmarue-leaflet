@@ -6,15 +6,17 @@ function addAutocomplete(field,selectCallback){
 	$('#' + field).autocomplete({
 		source : function(request, reponse){
 			$.ajax({
-				url : "${url}?q="+request.term,
+				url : "${url}?q="+request.term+"&lat=${latitude}&long=${longitude}&limit=${nb_results}",
 			    success : function(data){
 	                reponse($.map(data.features,function(elem){
-						return {
-							//Autocompletion
-							label: elem.properties.label,
-							lng: elem.properties.x,
-							lat: elem.properties.y,
-							objectid: elem.properties.id
+	                	if(elem.properties.postcode.startsWith("93")) {
+							return {
+								//Autocompletion
+								label: elem.properties.label,
+								lng: elem.properties.x,
+								lat: elem.properties.y,
+								objectid: elem.properties.id
+							}
 						}
 					}));
 	        	}

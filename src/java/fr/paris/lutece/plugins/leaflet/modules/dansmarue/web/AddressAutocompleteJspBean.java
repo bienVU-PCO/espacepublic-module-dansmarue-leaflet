@@ -67,6 +67,12 @@ public class AddressAutocompleteJspBean
     /** The Constant PROPERTY_URL. */
     private static final String PROPERTY_URL = "address.autocomplete.url";
 
+    /** The Constant PROPERTY_URL. */
+    private static final String PROPERTY_LATITUDE = "address.autocomplete.latitude";
+
+    /** The Constant PROPERTY_URL. */
+    private static final String PROPERTY_LONGITUDE = "address.autocomplete.longitude";
+
     /** The Constant MARK_DELAY. */
     // Markers
     private static final String MARK_DELAY = "delay";
@@ -85,6 +91,12 @@ public class AddressAutocompleteJspBean
 
     /** The Constant MARK_URL. */
     private static final String MARK_URL = "url";
+
+    /** The Constant MARK_URL. */
+    private static final String MARK_LATITUDE = "latitude";
+
+    /** The Constant MARK_URL. */
+    private static final String MARK_LONGITUDE = "longitude";
 
     /** The Constant TEMPLATE_ADRESS_AUTOCOMPLETE. */
     // TEMPLATES
@@ -106,6 +118,8 @@ public class AddressAutocompleteJspBean
         model.put( MARK_NB_RESULTS, AppPropertiesService.getProperty( PROPERTY_NB_RESULTS ) );
         model.put( MARK_CLIENT_ID, AppPropertiesService.getProperty( PROPERTY_CLIENT_ID ) );
         model.put( MARK_URL, AppPropertiesService.getProperty( PROPERTY_URL ) );
+        model.put( MARK_LATITUDE, AppPropertiesService.getProperty( PROPERTY_LATITUDE ) );
+        model.put( MARK_LONGITUDE, AppPropertiesService.getProperty( PROPERTY_LONGITUDE ) );
 
         HtmlTemplate template = AppTemplateService.getTemplate( TEMPLATE_ADRESS_AUTOCOMPLETE, request.getLocale( ), model );
         return template.getHtml( );
