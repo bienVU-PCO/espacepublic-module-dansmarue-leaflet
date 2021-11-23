@@ -24,6 +24,15 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <sonar.sources>src/java</sonar.sources>
   </properties>
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>fr.paris.lutece</groupId>
+        <artifactId>lutece-core</artifactId>
+        <version>6.1.0</version>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
   <dependencies>
     <dependency>
       <groupId>fr.paris.lutece</groupId>
