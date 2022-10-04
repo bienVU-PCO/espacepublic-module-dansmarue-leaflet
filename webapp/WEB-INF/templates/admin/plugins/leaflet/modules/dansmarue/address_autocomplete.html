@@ -6,7 +6,7 @@ function addAutocomplete(field,selectCallback){
 	$('#' + field).autocomplete({
 		source : function(request, reponse){
 			$.ajax({
-				url : "${url}?q="+request.term+"&lat=${latitude}&long=${longitude}&limit=${nb_results}",
+				url : "${url}?q="+request.term+"&lat=${latitude}&lon=${longitude}&limit=${nb_results}",
 			    success : function(data){
 	                reponse($.map(data.features,function(elem){
 	                	if(elem.properties.postcode.startsWith("93")) {
